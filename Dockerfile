@@ -20,6 +20,4 @@ RUN uv tool install --python 3.11 sleap-nn[torch] --torch-backend auto
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-WORKDIR /workspace
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["train", "--config", "sleap_config.yaml"]
