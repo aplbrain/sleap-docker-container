@@ -7,10 +7,10 @@ if [[ -n "${INPUT_DIR:-}" || -n "${OUTPUT_DIR:-}" ]]; then
 
   mkdir -p "${OUTPUT_DIR}"
   tmp_dir="$(mktemp -d)"
-  staged_config="${tmp_dir}/config.yaml"
+  staged_config="${tmp_dir}/sleap_config.yaml"
 
-  if [[ ! -f "${INPUT_DIR}/config.yaml" ]]; then
-    echo "Expected config at ${INPUT_DIR}/config.yaml" >&2
+  if [[ ! -f "${INPUT_DIR}/sleap_config.yaml" ]]; then
+    echo "Expected config at ${INPUT_DIR}/sleap_config.yaml" >&2
     exit 1
   fi
 
@@ -51,7 +51,7 @@ if [[ -n "${INPUT_DIR:-}" || -n "${OUTPUT_DIR:-}" ]]; then
     }
 
     { print }
-  ' "${INPUT_DIR}/config.yaml" > "${staged_config}"
+  ' "${INPUT_DIR}/sleap_config.yaml" > "${staged_config}"
 
   cd "${tmp_dir}"
 

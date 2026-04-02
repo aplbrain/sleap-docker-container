@@ -22,4 +22,4 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 WORKDIR /workspace
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["train", "--config", "config.yaml"]
+CMD ["train", "--config", "sleap_config.yaml"]
